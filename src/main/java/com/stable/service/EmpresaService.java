@@ -15,7 +15,8 @@ public class EmpresaService {
         repositorioEmpresa.fecharConexao();
     }
     public  boolean logarEmpresa(String login, String senha){
-        if(repositorioEmpresa.logarEmpresa(login, senha)){
+        Empresa empresa = new Empresa();
+        if(empresa.login(repositorioEmpresa.logarEmpresa(login, senha))){
             repositorioEmpresa.fecharConexao();
             return true;
         }else{

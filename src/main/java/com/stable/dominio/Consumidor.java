@@ -2,6 +2,7 @@ package com.stable.dominio;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 
 public class Consumidor {
     @JsonProperty
@@ -37,6 +38,7 @@ public class Consumidor {
         this.nivelConsumo = nivelConsumo;
         this.prioridade = prioridade;
     }
+
 
     public String getNomeConsumidor() {
         return nomeConsumidor;
@@ -93,4 +95,7 @@ public class Consumidor {
     public void setEnergia(String energia) {
         this.energia = energia;
     }
+
+
+
 }

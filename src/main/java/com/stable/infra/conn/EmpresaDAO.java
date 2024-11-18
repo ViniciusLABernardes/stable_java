@@ -89,7 +89,7 @@ public class EmpresaDAO implements RepositorioEmpresa {
                 return true;
 
             }else{
-                System.out.println("Empresa não encontrada");
+                System.out.println("Empresa não encontrada ou senha incorreta");
                 preparandoEstado.close();
                 resultSet.close();
                 return false;

@@ -4,6 +4,8 @@ import com.stable.dominio.Consumidor;
 import com.stable.dominio.FonteEnergia;
 import com.stable.dominio.RepositorioConsumidor;
 
+import java.util.ArrayList;
+
 public class ConsumidorService {
     RepositorioConsumidor repositorioConsumidor;
     public ConsumidorService(RepositorioConsumidor repositorioConsumidor){
@@ -14,4 +16,6 @@ public class ConsumidorService {
         repositorioConsumidor.inserirConsumidor(consumidor,energia,login);
         repositorioConsumidor.fecharConexao();
     }
+
+
 }

@@ -52,8 +52,8 @@ public class Empresa implements Verificador{
         return senha;
     }
 
-    public boolean login(String login, String senha){
-        if(this.login.equals(login) && this.senha.equals(senha)){
+    public boolean login(boolean logado){
+        if(logado){
             System.out.println("Logado");
             return true;
         }else{

@@ -90,4 +90,43 @@ public class FonteEnergiaController {
                 .build();
     }
 
+    @GET
+    @Path("/menor-emissor/{regiao}-{login}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response menorEmissorCarbono(
+            @PathParam("login") String login,
+            @PathParam("regiao") String regiao
+    ){
+        Consumidor consumidor = null;
+        try{
+             consumidor = fonteEnergiaService.menorEmissorCarbono(regiao,login);
+        }catch (Exception e){
+            System.out.println("Erro ao pegar menor emissor de carbono");
+        }
+        return Response
+                .status(Response.Status.OK)
+                .entity(consumidor)
+                .build();
+    }
+
+    @GET
+    @Path("/soma-consumo-total/{regiao}-{login}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response calcularGastoEnergeticoTotal(
+            @PathParam("login") String login,
+            @PathParam("regiao") String regiao
+    ){
+        double totalEnergia = 0;
+        try{
+             totalEnergia = fonteEnergiaService.calcularGastoEnergeticoTotal(regiao,login);
+        }catch (Exception e){
+            System.out.println("Erro ao pegar soma dos niveis");
+        }
+        return Response
+                .status(Response.Status.OK)
+                .entity(totalEnergia)
+                .build();
+    }
 }

@@ -30,4 +30,16 @@ public class FonteEnergiaService {
         //Nosso objetivo na verdade seria nunca fechar esta conexão, já que ela estaria conectada 24 horas as fontes de energia
     }
 
+    public Consumidor menorEmissorCarbono(String regiao, String login) {
+        ArrayList<Consumidor> consumidores = repositorioFonte.listarConsumidoresPorRegiao(regiao, login);
+        repositorioFonte.fecharConexao();
+
+        return FonteEnergia.menorEmissorCarbono(consumidores);
+    }
+    public double calcularGastoEnergeticoTotal(String regiao, String login){
+        ArrayList<Consumidor> consumidores = repositorioFonte.listarConsumidoresPorRegiao(regiao, login);
+        repositorioFonte.fecharConexao();
+
+        return FonteEnergia.calcularGastoEnergeticoTotal(consumidores);
+    }
 }
