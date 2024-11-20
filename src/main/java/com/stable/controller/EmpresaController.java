@@ -18,15 +18,6 @@ public class EmpresaController {
         empresaDAO = new EmpresaDAO();
         empresaService = new EmpresaService(empresaDAO);
     }
-    @OPTIONS
-    public Response handleCorsPreflight() {
-        return Response
-                .ok()
-                .header("Access-Control-Allow-Origin", "*")
-                .header("Access-Control-Allow-Headers", "Content-Type, Accept, Authorization")
-                .header("Access-Control-Allow-Methods", "POST, OPTIONS")
-                .build();
-    }
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
