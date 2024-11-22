@@ -41,7 +41,7 @@ public class FonteEnergiaController {
     }
 
     @GET
-    @Path("/{regiao}-{login}")
+    @Path("/{regiao}/{login}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 
@@ -62,7 +62,7 @@ public class FonteEnergiaController {
     }
 
     @PUT
-    @Path("/{regiao}-{login}")
+    @Path("/{regiao}/{login}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
 
@@ -82,7 +82,7 @@ public class FonteEnergiaController {
     }
 
     @GET
-    @Path("/menor-emissor/{regiao}-{login}")
+    @Path("/menor-emissor/{regiao}/{login}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response menorEmissorCarbono(
@@ -102,7 +102,7 @@ public class FonteEnergiaController {
     }
 
     @GET
-    @Path("/soma-consumo-total/{regiao}-{login}")
+    @Path("/soma-consumo-total/{regiao}/{login}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response calcularGastoEnergeticoTotal(
